@@ -185,7 +185,7 @@ customer-agent-demo
 
 - 展示客服核心指标
 - 展示业务趋势变化
-![业务趋势分析页面](images/dashboard&trend(by streamlit).png)
+![业务核心指标面板及趋势图](images/业务核心指标面板及趋势图.png)
 
 ### AI业务分析推送效果
 
