@@ -22,20 +22,19 @@
 
 数据 → 分析 → AI判断 → 信息推送
 
-
+```markdown
 ## 系统架构
-客服业务数据
-  ↓
-SQLite 数据库
-  ↓
-指标分析模块
-analysis/metric.py
-  ↓
-DeepSeek Agent
-agent/deepseek_agent.py
-  ↓
-Streamlit 飞书机器人
-业务看板 自动提醒
+
+客服业务数据  
+↓  
+SQLite 数据库  
+↓  
+数据分析模块（analysis/metric.py）  
+↓  
+DeepSeek Agent（agent/deepseek_agent.py）  
+↓  
+├── Streamlit业务看板  
+└── 飞书机器人自动提醒
 
 
 ## 核心功能
@@ -106,27 +105,29 @@ AI分析：
 
 
 ## 项目目录
+```text
 customer-agent-demo
-
+│
 ├── agent
-│ └── deepseek_agent.py
-
+│   └── deepseek_agent.py
+│
 ├── analysis
-│ ├── metric.py
-│ └── read_data.py
-
+│   ├── metric.py
+│   └── read_data.py
+│
 ├── database
-│ └── customer.db
-
+│   └── customer.db
+│
 ├── push
-│ └── notify.py
-
+│   └── notify.py
+│
 ├── data
-│ └── customer.csv
-
+│   └── customer.csv
+│
 ├── app.py
-
+│
 └── README.md
+```
 
 
 ## 后续规划
