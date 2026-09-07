@@ -1,8 +1,8 @@
-import streamlit as st
-
-from analysis.metric import analyze_metrics
 from agent.deepseek_agent import generate_business_summary
 from push.notify import send_notification
+import streamlit as st
+from analysis.metric import analyze_metrics
+from analysis.trend import analyze_trend
 
 
 # =========================
@@ -19,7 +19,7 @@ st.write("客服业务监测与信息中转系统")
 # =========================
 
 metrics = analyze_metrics()
-
+trend = analyze_trend()
 
 # =========================
 # 业务指标
@@ -75,6 +75,34 @@ else:
     st.success("今日业务正常，无异常")
 
 
+# =========================
+# 趋势分析
+# =========================
+
+st.divider()
+
+st.subheader("📈 业务趋势")
+
+
+st.write("咨询量趋势")
+
+st.line_chart(
+    trend.set_index("date")["consult_count"]
+)
+
+
+st.write("满意度趋势")
+
+st.line_chart(
+    trend.set_index("date")["satisfaction"]
+)
+
+
+st.write("响应时间趋势")
+
+st.line_chart(
+    trend.set_index("date")["response_time"]
+)
 # =========================
 # AI Agent
 # =========================
